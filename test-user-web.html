@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试 User Web</title>
+</head>
+<body>
+    <h1>测试 User Web 应用</h1>
+    <iframe src="http://localhost:8084" width="100%" height="600px" frameborder="0"></iframe>
+    
+    <script>
+        console.log('测试页面加载完成');
+        
+        // 检查iframe是否加载成功
+        const iframe = document.querySelector('iframe');
+        iframe.onload = function() {
+            console.log('User Web iframe 加载成功');
+        };
+        
+        iframe.onerror = function() {
+            console.error('User Web iframe 加载失败');
+        };
+    </script>
+</body>
+</html>

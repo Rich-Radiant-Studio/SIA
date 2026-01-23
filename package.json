@@ -1,0 +1,26 @@
+{
+  "name": "micro-frontend-workspace",
+  "version": "1.0.0",
+  "description": "微前端项目工作空间",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:main\" \"npm run dev:designer\" \"npm run dev:supplier\" \"npm run dev:contractor\" \"npm run dev:user\"",
+    "dev:main": "cd packages/main-web && npm run dev",
+    "dev:designer": "cd packages/designer-web && npm run dev",
+    "dev:supplier": "cd packages/supplier-web && npm run dev",
+    "dev:contractor": "cd packages/contractor-web && npm run dev",
+    "dev:user": "cd packages/user-web && npm run dev",
+    "build": "npm run build:main && npm run build:designer && npm run build:supplier && npm run build:contractor && npm run build:user",
+    "build:main": "cd packages/main-web && npm run build",
+    "build:designer": "cd packages/designer-web && npm run build",
+    "build:supplier": "cd packages/supplier-web && npm run build",
+    "build:contractor": "cd packages/contractor-web && npm run build",
+    "build:user": "cd packages/user-web && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}

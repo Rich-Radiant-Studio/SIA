@@ -1,0 +1,22 @@
+# EditorConfig - 保持代码风格一致性
+# https://editorconfig.org
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{js,ts,vue,json}]
+indent_style = space
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+
+# 最小化差异原则：
+# - 使用项目现有的缩进风格
+# - 保持现有的换行符格式
+# - 不做不必要的格式化
