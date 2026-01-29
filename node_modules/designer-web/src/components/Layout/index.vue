@@ -67,7 +67,7 @@ const userInfo = computed(() => authStore.userInfo)
 
 .header-left h1 {
   margin: 0;
-  color: #409eff;
+  color: #00699A;
   font-size: 20px;
 }
 

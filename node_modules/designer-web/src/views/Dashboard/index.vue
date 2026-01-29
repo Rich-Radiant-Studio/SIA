@@ -90,7 +90,7 @@ const viewProjects = () => {
 }
 
 .welcome-section h1 {
-  color: #409eff;
+  color: #00699A;
   margin-bottom: 10px;
 }
 
@@ -119,7 +119,7 @@ const viewProjects = () => {
 .stat-icon {
   width: 50px;
   height: 50px;
-  background: #409eff;
+  background: #00699A;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -131,7 +131,7 @@ const viewProjects = () => {
 .stat-info h3 {
   margin: 0;
   font-size: 24px;
-  color: #303133;
+  color: #102129;
 }
 
 .stat-info p {
@@ -149,7 +149,7 @@ const viewProjects = () => {
 
 .quick-actions h2 {
   margin-bottom: 20px;
-  color: #303133;
+  color: #102129;
 }
 
 .action-buttons {

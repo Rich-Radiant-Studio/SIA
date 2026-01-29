@@ -5,6 +5,7 @@ import ElementPlus from 'element-plus'
 import Antd from 'ant-design-vue'
 import 'element-plus/dist/index.css'
 import 'ant-design-vue/dist/reset.css'
+import './assets/styles/global.css'
 
 import App from './App.vue'
 import router from './router'

@@ -24,7 +24,7 @@
 }
 
 .el-header {
-  background-color: #409eff;
+  background-color: #00699A;
   color: white;
   display: flex;
   align-items: center;

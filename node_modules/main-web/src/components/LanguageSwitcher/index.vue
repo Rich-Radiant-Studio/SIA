@@ -137,8 +137,8 @@ defineExpose({
 }
 
 .language-btn:hover {
-  border-color: #409eff;
-  color: #409eff;
+  border-color: #00699A;
+  color: #00699A;
 }
 
 .current-flag {
@@ -174,10 +174,10 @@ defineExpose({
 
 :deep(.el-dropdown-menu__item.is-active) {
   background-color: #f5f7fa;
-  color: #409eff;
+  color: #00699A;
 }
 
 :deep(.el-dropdown-menu__item:hover) {
-  background-color: #ecf5ff;
+  background-color: #e6f4f9;
 }
 </style>

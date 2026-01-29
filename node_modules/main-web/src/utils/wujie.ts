@@ -11,10 +11,6 @@ const MICRO_APP_CONFIG = {
     url: 'http://localhost:8082', 
     name: 'supplier-web'
   },
-  'contractor-web': {
-    url: 'http://localhost:8083',
-    name: 'contractor-web'
-  },
   'user-web': {
     url: 'http://localhost:8084',
     name: 'user-web'

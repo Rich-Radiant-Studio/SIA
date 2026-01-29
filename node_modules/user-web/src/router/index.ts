@@ -62,16 +62,7 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/Profile.vue'),
     meta: { title: '提交需求' }
   },
-  {
-    path: '/login',
-    component: () => import('@/views/Profile.vue'),
-    meta: { title: '登录' }
-  },
-  {
-    path: '/register',
-    component: () => import('@/views/Profile.vue'),
-    meta: { title: '注册' }
-  },
+
   {
     path: '/buy-now/:type',
     component: () => import('@/views/Profile.vue'),

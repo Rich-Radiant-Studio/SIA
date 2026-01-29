@@ -24,11 +24,26 @@ export const constantRoutes: RouteRecordRaw[] = [
   },
   {
     path: '/',
+    redirect: '/user' // 默认重定向到用户端
+  },
+  {
+    path: '/user',
+    name: 'User',
+    component: () => import('@/views/MicroApps/UserApp.vue'),
+    meta: {
+      title: 'user.title',
+      roles: ['user', 'guest'],
+      microApp: 'user-web',
+      fullscreen: true, // 标记为全屏显示
+      allowGuest: true // 允许游客访问
+    }
+  },
+  {
+    path: '/dashboard',
     component: Layout,
-    redirect: '/dashboard',
     children: [
       {
-        path: 'dashboard',
+        path: '',
         name: 'Dashboard',
         component: () => import('@/views/Dashboard/index.vue'),
         meta: { 
@@ -101,37 +116,6 @@ export const asyncRoutes: RouteRecordRaw[] = [
         }
       }
     ]
-  },
-  {
-    path: '/contractor',
-    name: 'Contractor',
-    component: Layout,
-    meta: {
-      title: 'contractor.title',
-      roles: ['contractor']
-    },
-    children: [
-      {
-        path: '',
-        name: 'ContractorApp',
-        component: () => import('@/views/MicroApps/ContractorApp.vue'),
-        meta: { 
-          title: 'contractor.app',
-          microApp: 'contractor-web'
-        }
-      }
-    ]
-  },
-  {
-    path: '/user',
-    name: 'User',
-    component: () => import('@/views/MicroApps/UserApp.vue'),
-    meta: {
-      title: 'user.title',
-      roles: ['user', 'guest'],
-      microApp: 'user-web',
-      fullscreen: true // 标记为全屏显示
-    }
   }
 ]
 
@@ -151,6 +135,20 @@ router.beforeEach(async (to, from, next) => {
     routeMeta: to.meta
   })
   
+  // 如果访问用户端且未登录，自动创建游客账号
+  if (to.path === '/user' && !authStore.isAuthenticated) {
+    try {
+      await authStore.createGuestAccount()
+      authStore.saveLastVisitedRoute(to.path)
+      next()
+      return
+    } catch (error) {
+      console.error('创建游客账号失败:', error)
+      next('/login')
+      return
+    }
+  }
+  
   // 检查是否为游客模式允许的路由
   if (to.meta?.allowGuest) {
     next()
@@ -161,6 +159,11 @@ router.beforeEach(async (to, from, next) => {
   if (!authStore.isAuthenticated) {
     next('/login')
     return
+  }
+  
+  // 保存最后访问的路由（排除登录注册页）
+  if (to.path !== '/login' && to.path !== '/register') {
+    authStore.saveLastVisitedRoute(to.path)
   }
   
   // 检查权限路由

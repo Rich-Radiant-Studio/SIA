@@ -89,7 +89,7 @@ const hasRole = (roles: string[]) => {
 }
 
 .welcome-card h2 {
-  color: #409eff;
+  color: #00699A;
   margin-bottom: 10px;
 }
 
@@ -152,7 +152,7 @@ const hasRole = (roles: string[]) => {
 
 .stat-content h3 {
   margin: 0 0 10px 0;
-  color: #303133;
+  color: #102129;
   font-size: 18px;
 }
 

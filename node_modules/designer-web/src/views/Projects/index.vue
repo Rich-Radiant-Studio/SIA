@@ -26,7 +26,7 @@
 
 .page-header h1 {
   margin: 0 0 10px 0;
-  color: #303133;
+  color: #102129;
 }
 
 .page-header p {

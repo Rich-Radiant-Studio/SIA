@@ -4,6 +4,7 @@ import ElementPlus from 'element-plus'
 import Antd from 'ant-design-vue'
 import 'element-plus/dist/index.css'
 import 'ant-design-vue/dist/reset.css'
+import './assets/styles/global.css'
 
 import App from './App.vue'
 import router from './router'
@@ -22,10 +23,10 @@ const i18nPlugin = createI18nPlugin({
         payload: { locale }
       })
     }
-    
+
     // 设置HTML属性
     document.documentElement.lang = locale
-    
+
     // 触发全局事件
     window.dispatchEvent(new CustomEvent('app-language-changed', {
       detail: { locale }
@@ -55,10 +56,10 @@ const initApp = async () => {
   // 初始化默认语言
   const savedLocale = localStorage.getItem('locale') || 'zh'
   await i18nPlugin.switchLocale(savedLocale)
-  
+
   // 挂载应用
   app.mount('#app')
-  
+
   console.log('🚀 App initialized with i18n plugin and auth')
 }
 

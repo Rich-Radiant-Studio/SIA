@@ -152,7 +152,7 @@ const handleUserCommand = async (command: string) => {
 
 .header-left .logo {
   margin: 0;
-  color: #409eff;
+  color: #00699A;
   font-size: 20px;
   font-weight: bold;
 }
