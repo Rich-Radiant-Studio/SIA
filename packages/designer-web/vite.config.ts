@@ -11,7 +11,15 @@ export default defineConfig({
   },
   server: {
     port: 8081,
-    cors: true
+    host: '0.0.0.0',
+    cors: true,
+    allowedHosts: [
+      'women-boxing-vatican-knives.trycloudflare.com',
+      '.trycloudflare.com',
+      'localhost'
+    ],
+    hmr: false,
+    origin: ''
   },
   build: {
     target: 'es2015'
